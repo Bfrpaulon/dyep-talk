@@ -10,82 +10,85 @@ export const ChatContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
   width: 100%;
+  height: 100vh;
+  background-color: ${lightBlue};
 `;
 
-export const Header = styled.div`
+export const Header = styled.header`
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
   background-color: ${darkBlue};
-  height: 80px;
-  color: #fff;
-  font-size: 2rem;
 `;
 
 export const Logo = styled.img`
-  height: 60px;
-  width: auto;
+  width: 120px;
+  height: 80px;
 `;
 
 export const MessageContainer = styled.div`
-  overflow-y: scroll;
   flex: 1;
+  overflow-y: auto;
   padding: 20px;
 `;
 
 export const MessageList = styled.ul`
   list-style: none;
+  margin: 0;
   padding: 0;
 `;
 
 export const MessageItem = styled.li`
   display: flex;
-  flex-direction: column;
+  align-items: center;
   margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;
 
-export const MessageText = styled.p`
-  background-color: ${lightBlue};
-  border-radius: 10px;
-  padding: 10px;
-  font-size: 1.2rem;
-  max-width: 80%;
-  align-self: flex-start;
-  color: ${darkBlue};
-  margin-right: auto;
+export const MessageText = styled.span`
+  padding: 8px 16px;
+  background-color: ${blue};
+  color: ${lightBlue};
+  border-radius: 20px;
+  max-width: 70%;
+  word-wrap: break-word;
+  font-size: 14px;
 `;
 
 export const MessageSender = styled.span`
-  font-size: 0.8rem;
+  margin-left: 10px;
   color: ${gray};
-  margin-top: 5px;
+  font-size: 12px;
 `;
 
 export const InputContainer = styled.form`
   display: flex;
   align-items: center;
-  margin: 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 70px;
+  background-color: ${lightGray};
+  padding: 10px;
   position: fixed;
   bottom: 0;
-  width: calc(100% - 40px);
 `;
 
 export const InputField = styled.input`
   flex: 1;
-  padding: 15px;
+  height: 50px;
+  border-radius: 25px;
   border: none;
-  outline: none;
-  font-size: 1.2rem;
-  color: ${gray};
+  padding: 0 20px;
+  font-size: 16px;
 `;
 
 export const SendButton = styled.button`
-  b order: none;
+  border: none;
   border-radius: 10px;
   background-color: #072e7d;
   color: #fff;
@@ -98,18 +101,6 @@ export const SendButton = styled.button`
     background-color: #0e59f0;
   }
 `;
-export const EmojiSelectorContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  background-color: ${lightGray};
-  position: absolute;
-  bottom: calc(100% + 10px);
-  width: 100%;
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
-`;
-
 
 export const EmojiButton = styled.button`
   border: none;
