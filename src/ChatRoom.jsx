@@ -10,6 +10,8 @@ import {
   InputContainer,
   InputField,
   SendButton,
+  Logo,
+  Header,
 } from './ChatRoom.style';
 
 function ChatRoom() {
