@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import socketIOClient from 'socket.io-client';
+import EmojiPicker from 'react-emoji-render/lib/EmojiPicker';
+import 'react-emoji-render/lib/EmojiPicker.css';
+
 import {
   ChatContainer,
   MessageContainer,
@@ -13,10 +16,10 @@ import {
   EmojiButton,
 } from './ChatRoom.style';
 
-
 function ChatRoom() {
   const [messages, setMessages] = useState([]);
   const [text, setText] = useState('');
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const socketRef = useRef();
 
   useEffect(() => {
@@ -37,6 +40,10 @@ function ChatRoom() {
       socketRef.current.emit('chat message', text);
       setText('');
     }
+  };
+
+  const handleSelectEmoji = (emoji) => {
+    setText(text + emoji);
   };
 
   return (
@@ -60,7 +67,10 @@ function ChatRoom() {
           placeholder="Digite sua mensagem aqui"
         />
         <SendButton type="submit">Enviar</SendButton>
-        <EmojiButton>😊</EmojiButton>
+        <EmojiButton onClick={() => setShowEmojiPicker(!showEmojiPicker)}>😊</EmojiButton>
+        {showEmojiPicker && (
+          <EmojiPicker onSelect={handleSelectEmoji} />
+        )}
       </InputContainer>
     </ChatContainer>
   );

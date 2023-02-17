@@ -12,22 +12,10 @@ export const ChatContainer = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 100vh;
-  background-color: ${lightBlue};
+  background-color: #343434;
 `;
 
-export const Header = styled.header`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 50px;
-  background-color: ${darkBlue};
-`;
 
-export const Logo = styled.img`
-  width: 120px;
-  height: 80px;
-`;
 
 export const MessageContainer = styled.div`
   flex: 1;
@@ -53,18 +41,19 @@ export const MessageItem = styled.li`
 
 export const MessageText = styled.span`
   padding: 8px 16px;
-  background-color: ${blue};
-  color: ${lightBlue};
+  background-color: ${lightGray};
+  color: white;
   border-radius: 20px;
   max-width: 70%;
+  font-family:cursive;
   word-wrap: break-word;
-  font-size: 14px;
+  font-size: 2rem;
 `;
 
 export const MessageSender = styled.span`
   margin-left: 10px;
   color: ${gray};
-  font-size: 12px;
+  font-size: 24px;
 `;
 
 export const InputContainer = styled.form`
