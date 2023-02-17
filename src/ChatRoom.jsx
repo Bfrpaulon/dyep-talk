@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import socketIOClient from 'socket.io-client';
+import logo from './logo.png';
 import {
   ChatContainer,
   MessageContainer,
@@ -11,7 +12,6 @@ import {
   InputField,
   SendButton,
   Logo,
-  Header,
 } from './ChatRoom.style';
 
 function ChatRoom() {
@@ -41,6 +41,7 @@ function ChatRoom() {
 
   return (
     <ChatContainer>
+        <img src={logo} alt="Logo" />
       <MessageContainer>
         <MessageList>
           {messages.map((message, index) => (

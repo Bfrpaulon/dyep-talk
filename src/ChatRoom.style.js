@@ -5,7 +5,7 @@ export const ChatContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #f8f8f8;
+
   color: #333333;
   font-family: sans-serif;
   font-size: 16px;
