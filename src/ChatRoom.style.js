@@ -1,81 +1,128 @@
 import styled from 'styled-components';
 
+const blue = '#0e59f0';
+const lightBlue = '#ccdcfc';
+const darkBlue = '#072e7d';
+const gray = '#6d7684';
+const lightGray = '#a9b7cc';
+
 export const ChatContainer = styled.div`
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100vh;
+  width: 100%;
+`;
 
-  color: #333333;
-  font-family: sans-serif;
-  font-size: 16px;
+export const Header = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${darkBlue};
+  height: 80px;
+  color: #fff;
+  font-size: 2rem;
+`;
+
+export const Logo = styled.img`
+  height: 60px;
+  width: auto;
 `;
 
 export const MessageContainer = styled.div`
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  overflow-y: auto;
+  overflow-y: scroll;
+  flex: 1;
+  padding: 20px;
 `;
 
 export const MessageList = styled.ul`
-  list-style-type: none;
+  list-style: none;
   padding: 0;
-  margin: 0;
 `;
 
 export const MessageItem = styled.li`
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 `;
 
-export const MessageText = styled.span`
-  background-color: #fff;
+export const MessageText = styled.p`
+  background-color: ${lightBlue};
   border-radius: 10px;
   padding: 10px;
-  max-width: 60%;
+  font-size: 1.2rem;
+  max-width: 80%;
   align-self: flex-start;
+  color: ${darkBlue};
+  margin-right: auto;
 `;
 
 export const MessageSender = styled.span`
-  font-size: 12px;
-  color: #999999;
+  font-size: 0.8rem;
+  color: ${gray};
   margin-top: 5px;
-  align-self: flex-start;
 `;
 
 export const InputContainer = styled.form`
-  height: 20%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: #ffffff;
-  border-top: 1px solid #e8e8e8;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  bottom: 0;
+  width: calc(100% - 40px);
 `;
 
 export const InputField = styled.input`
-  flex-grow: 1;
-  padding: 10px;
+  flex: 1;
+  padding: 15px;
   border: none;
-  border-radius: 3px;
-  font-size: 16px;
-  margin-right: 10px;
+  outline: none;
+  font-size: 1.2rem;
+  color: ${gray};
 `;
 
 export const SendButton = styled.button`
-  padding: 10px 20px;
-  border: none;
-  border-radius: 3px;
+  b order: none;
+  border-radius: 10px;
+  background-color: #072e7d;
+  color: #fff;
   font-size: 16px;
-  color: #ffffff;
-  background-color: #5a5a5a;
+  padding: 10px 15px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #6c6c6c;
+    background-color: #0e59f0;
+  }
+`;
+export const EmojiSelectorContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  background-color: ${lightGray};
+  position: absolute;
+  bottom: calc(100% + 10px);
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+`;
+
+
+export const EmojiButton = styled.button`
+  border: none;
+  border-radius: 10px;
+  background-color: #072e7d;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+
+  &:hover {
+    background-color: #0e59f0;
   }
 `;
